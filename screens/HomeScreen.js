@@ -12,11 +12,17 @@ import { WebBrowser } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 
 import { MonoText } from '../components/StyledText';
+import { MenuButton } from '../components/MenuButton';
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
+
   render() {
     return (
       <View style={styles.container}>
+        <MenuButton navigation={this.props.navigation} />
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
