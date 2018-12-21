@@ -1,14 +1,32 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import { View, ScrollView, StyleSheet, Text } from 'react-native';
+import { ExpoLinksView } from '@expo/samples';
+
+import { MenuButton } from '../components/MenuButton';
 
 export default class SettingsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'app.json',
-  };
+    static navigationOptions = {
+        header: null,
+    };
 
-  render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <MenuButton navigation={this.props.navigation} />
+                <Text style={styles.text}>Settings</Text>
+            </View>
+        );
+    }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 22,
+    textAlign: 'center',
+  },
+});
