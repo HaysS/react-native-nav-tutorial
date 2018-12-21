@@ -14,53 +14,50 @@ const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
 
 export default class MenuDrawer extends React.Component {
-  navLink(nav, text) {
-    return(
-      <TouchableOpacity onPress={() => this.props.navigation.navigate(nav)}>
-        <Text style={styles.link}>{text}</Text>
-      </TouchableOpacity>
-    )
-  }
+    navLink(nav, text) {
+        return(
+            <TouchableOpacity onPress={() => this.props.navigation.navigate(nav)}>
+                <Text style={styles.link}>{text}</Text>
+            </TouchableOpacity>
+        )
+    }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView style={styles.scroller}>
-          <View style={styles.topLinks}>
-            <View style={styles.profile}>
-              <View style={styles.imgView}>
-                <Image source={require('../assets/images/hays-profile.jpg')} style={styles.img} />
-              </View>
-              <View style={styles.profileText}>
-                <Text style={styles.name}>Hays Stanford</Text>
-                <Text style={styles.rating}>5.00 {'\u2605'}</Text>
-              </View>
+    render() {
+        return (
+            <View style={styles.container}>
+                <ScrollView style={styles.scroller}>
+                    <View style={styles.topLinks}>
+                        <View style={styles.profile}>
+                            <View style={styles.imgView}>
+                                <Image source={require('../assets/images/hays-profile.jpg')} style={styles.img} />
+                            </View>
+                            <View style={styles.profileText}>
+                                <Text style={styles.name}>Hays Stanford</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.bottomLinks}>
+                        {this.navLink('Home', 'Home')}
+                        {this.navLink('Links', 'Links')}
+                        {this.navLink('Settings', 'Settings')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                        {this.navLink('', '')}
+                    </View>
+                </ScrollView>
+                <View style={styles.footer}>
+                    <Text style={styles.description}>Menu Tutorial</Text>
+                    <Text style={styles.version}>v1.0</Text>
+                </View>
             </View>
-          </View>
-          <View style={styles.bottomLinks}>
-            {this.navLink('Home', 'Home')}
-            {this.navLink('Links', 'Your Trips')}
-            {this.navLink('Settings', 'Settings')}
-            {this.navLink('', '')}
-            {this.navLink('', '')}
-            {this.navLink('', '')}
-            {this.navLink('', '')}
-            {this.navLink('', '')}
-            {this.navLink('', '')}
-            {this.navLink('', '')}
-          </View>
-        </ScrollView>
-        <View style={styles.footer}>
-          <Text style={styles.legal}>
-            Menu Tutorial
-          </Text>
-          <Text style={styles.version}>
-           v1.0
-          </Text>
-        </View>
-      </View>
-    )
-  }
+        ) 
+    }
 }
 
 const styles = StyleSheet.create({
@@ -72,13 +69,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   topLinks: {
-    height: 270,
+    height: 160,
   },
   bottomLinks: {
     flex: 1, 
     backgroundColor: 'white', 
     paddingTop: 10, 
-    paddingBottom: 10,
+    paddingBottom: 50,
   },
   profile: {
     flex: 1, 
@@ -109,13 +106,6 @@ const styles = StyleSheet.create({
     color: 'white', 
     textAlign: 'left'
   },
-  rating: {
-    fontSize: 15, 
-    paddingTop: 5, 
-    color: 'white', 
-    textAlign: 'left', 
-    color: 'gray'
-  },
   footer: {
     height: 50, 
     flexDirection: 'row', 
@@ -130,7 +120,7 @@ const styles = StyleSheet.create({
     marginRight: 20, 
     color: '#9b9b9b'
   },
-  legal: {
+  description: {
     flex: 1, 
     marginLeft: 20, 
     fontSize: 16
