@@ -1,51 +1,32 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
+import { Platform, Dimensions } from 'react-native';
+import { createDrawerNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-});
+import MenuDrawer from '../components/MenuDrawer';
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
+const WIDTH = Dimensions.get('window').width
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
+const DrawerConfig = {
+    drawerWidth: WIDTH*0.83,
+    contentComponent: ({ navigation }) => {
+        return(<MenuDrawer navigation={navigation} />)
+    },
+}
 
 export default createDrawerNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-  Links: {
-    screen: LinksScreen,
-  },
-  Settings: {
-    screen: SettingsScreen
-  }
-});
+        Home: {
+            screen: HomeScreen,
+        },
+        Links: {
+            screen: LinksScreen,
+        },
+        Settings: {
+            screen: SettingsScreen
+        },
+    },
+    DrawerConfig
+);
