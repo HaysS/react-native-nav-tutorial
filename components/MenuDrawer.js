@@ -68,15 +68,6 @@ const styles = StyleSheet.create({
   scroller: {
     flex: 1,
   },
-  topLinks: {
-    height: 160,
-  },
-  bottomLinks: {
-    flex: 1, 
-    backgroundColor: 'white', 
-    paddingTop: 10, 
-    paddingBottom: 50,
-  },
   profile: {
     flex: 1, 
     flexDirection: 'row', 
@@ -89,6 +80,15 @@ const styles = StyleSheet.create({
     flex: 3, 
     flexDirection: 'column', 
     justifyContent: 'center',
+  },
+  topLinks: {
+    height: 160,
+  },
+  bottomLinks: {
+    flex: 1, 
+    backgroundColor: 'white', 
+    paddingTop: 10, 
+    paddingBottom: 50,
   },
   img: {
     height: 70, 
