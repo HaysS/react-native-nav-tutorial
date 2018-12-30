@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, Dimensions } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
@@ -17,7 +17,7 @@ const DrawerConfig = {
     },
 }
 
-export default createDrawerNavigator({
+const DrawerNavigator = createDrawerNavigator({
         Home: {
             screen: HomeScreen,
         },
@@ -30,3 +30,5 @@ export default createDrawerNavigator({
     },
     DrawerConfig
 );
+
+export default createAppContainer(DrawerNavigator);
