@@ -40,15 +40,6 @@ export default class MenuDrawer extends React.Component {
                         {this.navLink('Home', 'Home')}
                         {this.navLink('Links', 'Links')}
                         {this.navLink('Settings', 'Settings')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
-                        {this.navLink('', '')}
                     </View>
                 </ScrollView>
                 <View style={styles.footer}>
@@ -63,7 +54,7 @@ export default class MenuDrawer extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
   scroller: {
     flex: 1,
@@ -83,12 +74,13 @@ const styles = StyleSheet.create({
   },
   topLinks: {
     height: 160,
+    backgroundColor: 'black',
   },
   bottomLinks: {
     flex: 1, 
     backgroundColor: 'white', 
     paddingTop: 10, 
-    paddingBottom: 50,
+    paddingBottom: 450,
   },
   img: {
     height: 70, 
