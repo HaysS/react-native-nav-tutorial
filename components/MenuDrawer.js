@@ -117,10 +117,6 @@ const styles = StyleSheet.create({
     marginLeft: 20, 
     fontSize: 16
   },
-  external: {
-    flex: 1, 
-    paddingLeft: 20,
-  },
   link: {
     flex: 1, 
     fontSize: 20,
@@ -128,10 +124,5 @@ const styles = StyleSheet.create({
     paddingLeft: 14,
     margin: 5,
     textAlign: 'left',
-  },
-  extLink: {
-    fontSize: 15, 
-    color: 'white', 
-    paddingTop: 10,
   },
 })
